@@ -215,6 +215,11 @@ Another groupby() method worth mentioning is `agg()`, which lets you run a bunch
 ```python
 book.groupby(['country']).price.agg([len, min, max])  # Returns the len, min and max prices of books per country 
 ```
+#### Extra
+
+```python
+data_df.groupby(['Centre', 'VendorName', 'Partition', 'Labeled']).size().unstack(fill_value=0)
+```
 
 ### Multi-indexes
 In all of the examples we've seen thus far we've been working with DataFrame or Series objects with a single-label index. groupby() is slightly different in the fact that, depending on the operation we run, it will sometimes result in what is called a multi-index.
